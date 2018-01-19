@@ -1,6 +1,6 @@
 # Download data if necessary
 filename <- 'data.zip'
-if (!file.exists(filename) && !grep('UCI HAR Dataset', getwd())){
+if (!file.exists(filename) && !grepl(getwd(), "UCI HAR Dataset")){
   dataURL <- 'https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip'
   download.file(dataURL, 'data.zip')
 }
@@ -8,7 +8,7 @@ if (!file.exists("UCI HAR Dataset")){
   unzip('./data.zip')
 }
 
-if (!grep('UCI HAR Dataset', getwd())){
+if (!grepl(getwd(), "UCI HAR Dataset")){
   setwd("./UCI HAR Dataset")
 }
 
